@@ -1,5 +1,5 @@
 # Amman Imman Field Training App
-Amman Imman is a non-profit NGO that works in the Azawak region of Africa, in between Niger and Mali. AI's Field App allows it's field local nurses and team members to train individuals on multiple health and sanitation factors with the aide of visual representation.
+Amman Imman is a non-profit NGO that works in the Azawak region of Africa, in between Niger and Mali. AI's Field App allows its field local nurses and team members to train individuals on multiple health and sanitation factors with the aide of visual representation.
 
 ## About Amman Imman
 
