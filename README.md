@@ -19,9 +19,9 @@ This the 3rd time our team has tackled an official Project from Rutger's Full St
 
 ### If you'd like find out more about us:
 
-[Jamie Ferrugiaro](https://www.linked.in/in/jamiekaren)
-[Jasmin](https://www.linked.in/in/jamiekaren)
-[James Mulligan](https://www.linked.in/in/jamiekaren)
-[Mark McGee](https://www.linked.in/in/jamiekaren)
-[Will Yurkow](https://www.linked.in/in/jamiekaren)
+- [Jamie Ferrugiaro](https://www.linked.in/in/jamiekaren)
+- [Jasmin](https://www.linked.in/in/jamiekaren)
+- [James Mulligan](https://www.linked.in/in/jamiekaren)
+- [Mark McGee](https://www.linked.in/in/jamiekaren)
+- [Will Yurkow](https://www.linked.in/in/jamiekaren)
 
