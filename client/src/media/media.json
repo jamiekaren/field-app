@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "LessonOne",
+    "thumbnailImage": "/images/wash-hands.jpg",
+    "image": "/images/wash-hands.jpg",
+    "clicked": false
+  },
+
+  {
+    "id": 1,
+    "name": "LessonTwo",
+    "image": "/images/wash-hands.jpg",
+    "clicked": false
+  },
+
+  {
+    "id": 1,
+    "name": "LessonThree",
+    "image": "/images/wash-hands.jpg",
+    "clicked": false
+  }
+]
