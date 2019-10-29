@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer>
-    <hr />
+  <footer className="footer text-faded fixed-bottom text-center py-4">
     <p>Footer</p>
   </footer>
 );

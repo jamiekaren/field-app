@@ -25,7 +25,7 @@ class Home extends Component {
     this.onTextboxChangeSignInPassword = this.onTextboxChangeSignInPassword.bind(this);
     this.onTextboxChangeSignUpEmail = this.onTextboxChangeSignUpEmail.bind(this);
     this.onTextboxChangeSignUpPassword = this.onTextboxChangeSignUpPassword.bind(this);
-    
+
     this.onSignIn = this.onSignIn.bind(this);
     this.onSignUp = this.onSignUp.bind(this);
     this.logout = this.logout.bind(this);
@@ -135,7 +135,7 @@ class Home extends Component {
     });
 
     // Post request to backend
-   
+
     fetch('/api/account/signin', {
       method: 'POST',
       headers: {
@@ -208,12 +208,12 @@ class Home extends Component {
     } = this.state;
 
     if (isLoading) {
-      return (<div><p>Loading...</p></div>);
+      return (<div className="text-center"><p>Loading...</p></div>);
     }
 
     if (!token) {
       return (
-        <div>
+        <div className="text-center">
           <div>
             {
               (signInError) ? (
@@ -222,6 +222,7 @@ class Home extends Component {
             }
             <p>Sign In</p>
             <input
+              className="text-center"
               type="email"
               placeholder="Email"
               value={signInEmail}
@@ -229,13 +230,14 @@ class Home extends Component {
             />
             <br />
             <input
+              className="text-center"
               type="password"
               placeholder="Password"
               value={signInPassword}
               onChange={this.onTextboxChangeSignInPassword}
             />
             <br />
-            <button onClick={this.onSignIn}>Sign In</button>
+            <button className="mt-2 btn btn-primary" onClick={this.onSignIn}>Sign In</button>
           </div>
           <br />
           <br />
@@ -247,18 +249,20 @@ class Home extends Component {
             }
             <p>Sign Up</p>
             <input
+              className="text-center"
               type="email"
               placeholder="Email"
               value={signUpEmail}
               onChange={this.onTextboxChangeSignUpEmail}
             /><br />
             <input
+              className="text-center"
               type="password"
               placeholder="Password"
               value={signUpPassword}
               onChange={this.onTextboxChangeSignUpPassword}
             /><br />
-            <button onClick={this.onSignUp}>Sign Up</button>
+            <button className="mt-2 btn btn-primary" onClick={this.onSignUp}>Sign Up</button>
           </div>
 
         </div>
@@ -266,9 +270,9 @@ class Home extends Component {
     }
 
     return (
-      <div>
+      <div className="text-center">
         <p>Account</p>
-        <button onClick={this.logout}>Logout</button>
+        <button className="btn btn-primary" onClick={this.logout}>Logout</button>
       </div>
     );
   }
