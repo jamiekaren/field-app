@@ -7,6 +7,7 @@ import NotFound from './components/NotFound/NotFound';
 import Home from './components/Home/Home';
 
 import HelloWorld from './components/HelloWorld/HelloWorld';
+import Slideshow from './pages/Lessons/Lessons';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/helloworld" component={HelloWorld} />
+        <Route exact path="/lessons" component={Slideshow} />
         <Route component={NotFound} />
       </Switch>
       <Footer />
