@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import Trainer from './pages/Trainer';
 import Login from './components/Login/Login';
 import './components/style/style.css'
+import Slideshow from './pages/Lessons/Lessons';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" component={Login} />
         <Route path="/login" component={Home} />
         <Route path="/trainer" component={Trainer} />
+        <Route path="/" component={Slideshow} />
         <Route component={NotFound} />
       </Switch>
       <Footer />
