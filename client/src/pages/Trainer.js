@@ -1,18 +1,18 @@
 // import dependences and data
 import React, { Component } from "react";
-import Media from "../media/media.json";
+// import Media from "../media/media.json";
 import WashHands from "../media/wash-hands.jpg";
 // import API from "./src/utils/API.js";
 class Trainer extends Component {
   state = {
-    Meda: [...Media],
+    // Meda: [...Media],
     currentLesson: false
   };
   // componentDidMount() {
   //   // this.loadCurrentLesson();
   // }
   handleHardClick = image => {
-    console.log()
+    console.log(image)
   };
   render() {
     return (
@@ -27,7 +27,7 @@ class Trainer extends Component {
           <element className="groupLesson post">
             <card>
               <img
-                onClick=""
+                onClick={(image) => this.handleHardClick(this.className) }
                 className="imageHand"
                 src={WashHands}
                 alt="WashingHands"
