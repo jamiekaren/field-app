@@ -11,40 +11,42 @@ class Lessons extends Component {
     state = {
         brush11: Brush,
         brush12: Brush2,
-        wash: Wash
-    }
-
-    // const slideImages = [
-    //     '../../media/brush11.jpg',
-    //     '../../media/brush12.jpg',
-    //     '../../media/wash-hands.jpg'
-    // ];
-
-
-
-
-    // const Slideshow = () => {
-
-
-    render() {
-
-        
-        const properties = {
+        wash: Wash,
+        properties: {
             duration: 5000,
             transitionDuration: 500,
             infinite: true,
             indicators: true,
             arrows: true,
-            autoplay: false,
+            autoplay: true,
             onChange: (oldIndex, newIndex) => {
                 console.log(`slide transition from ${oldIndex} to ${newIndex}`);
             }
         }
+    };
+
+ 
+
+
+    render() {
+
+        
+        // const properties = {
+        //     duration: 5000,
+        //     transitionDuration: 500,
+        //     infinite: true,
+        //     indicators: true,
+        //     arrows: true,
+        //     autoplay: false,
+        //     onChange: (oldIndex, newIndex) => {
+        //         console.log(`slide transition from ${oldIndex} to ${newIndex}`);
+        //     }
+        // }
 
 
         return (
             <div className="slide-container">
-                <Slide {...properties}>
+                <Slide {...this.state.properties}>
                     <div className="each-slide">
                         <div style={{ 'backgroundImage': `url(${this.state.brush11})` }}>
                             <span>Slide 1</span>
