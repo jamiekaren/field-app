@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Slide } from 'react-slideshow-image';
 import Wash from '../../media/wash-hands.jpg';
 import Brush from '../../media/brush11.jpg';
@@ -25,12 +25,12 @@ class Lessons extends Component {
         }
     };
 
- 
+
 
 
     render() {
 
-        
+
         // const properties = {
         //     duration: 5000,
         //     transitionDuration: 500,
@@ -47,23 +47,25 @@ class Lessons extends Component {
         return (
             <div className="slide-container">
                 <Slide {...this.state.properties}>
-                    <div className="each-slide">
-                        <div style={{ 'backgroundImage': `url(${this.state.brush11})` }}>
-                            <span>Slide 1</span>
-                        </div>
+            
+                <div className="each-slide">
+                    <div style={{ 'backgroundImage': `url(${this.state.brush11})` }}>
+                        <span>Slide 1</span>
                     </div>
-                    <div className="each-slide">
-                        <div className style={{ 'backgroundImage': `url(${Brush})` }}>
-                            <span>Slide 2</span>
-                        </div>
+                </div>
+                <div className="each-slide">
+                    <div className style={{ 'backgroundImage': `url(${Brush})` }}>
+                        <span>Slide 2</span>
                     </div>
-                    <div className="each-slide">
-                        <div style={{ 'backgroundImage': `url(${Brush2})` }}>
-                            <span>Slide 3</span>
-                        </div>
+                </div>
+                <div className="each-slide">
+                    <div style={{ 'backgroundImage': `url(${Brush2})` }}>
+                        <span>Slide 3</span>
                     </div>
+                </div>
                 </Slide>
-            </div>
+          </div>
+
         )
     }
 

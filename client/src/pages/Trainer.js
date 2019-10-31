@@ -2,11 +2,19 @@
 import React, { Component } from "react";
 // import Media from "../media/media.json";
 import WashHands from "../media/wash-hands.jpg";
+import Lessons from "./Lessons/Lessons";
+
 // import API from "./src/utils/API.js";
+
+
+
+
 class Trainer extends Component {
   state = {
     // Meda: [...Media],
-    currentLesson: false
+    currentLesson: false,
+    Wash: WashHands,
+
   };
   // componentDidMount() {
   //   // this.loadCurrentLesson();
@@ -14,10 +22,12 @@ class Trainer extends Component {
   handleHardClick = image => {
     console.log(image)
   };
+
+
   render() {
     return (
       <React.Fragment>
-        
+
         <nav className="navbar navbar-dark bg-success class d-flex justify-space-between">
           <span className="navbar-brand mb-0">Field App PRO</span>
         </nav>
@@ -28,7 +38,7 @@ class Trainer extends Component {
           <element className="groupLesson post">
             <card>
               <img
-                onClick={(image) => this.handleHardClick(image) }
+                onClick={(image) => this.handleHardClick(image)}
                 className="imageHand"
                 src={WashHands}
                 alt="WashingHands"
@@ -70,7 +80,14 @@ class Trainer extends Component {
             </card>
           </element>
           <div className="container home row align-items-center justify-content-between"></div>
+
+
+          <Lessons />
+
+
+
         </div>
+
       </React.Fragment>
     );
   }
