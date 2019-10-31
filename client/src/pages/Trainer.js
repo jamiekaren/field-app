@@ -17,6 +17,7 @@ class Trainer extends Component {
   render() {
     return (
       <React.Fragment>
+        
         <nav className="navbar navbar-dark bg-success class d-flex justify-space-between">
           <span className="navbar-brand mb-0">Field App PRO</span>
         </nav>
@@ -27,7 +28,7 @@ class Trainer extends Component {
           <element className="groupLesson post">
             <card>
               <img
-                onClick={(image) => this.handleHardClick(this.className) }
+                onClick={(image) => this.handleHardClick(image) }
                 className="imageHand"
                 src={WashHands}
                 alt="WashingHands"
