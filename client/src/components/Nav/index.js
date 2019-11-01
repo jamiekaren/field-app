@@ -14,7 +14,7 @@ function Nav() {
       </Link>
     </nav>
     <header className="nav2 mb-5 py-5 sticky-top mw-100%">
-     <a href="/"><img src={logo} className="ml-4" ></img> </a> 
+     <a href="/"><img src={logo} alt="" className="ml-4" ></img> </a> 
     </header>
     </>
   )

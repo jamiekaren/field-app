@@ -4,6 +4,7 @@ import Wash from '../../media/wash-hands.jpg';
 import Brush from '../../media/brush11.jpg';
 import Brush2 from '../../media/brush12.jpg';
 
+
 import('./style.css');
 
 
@@ -13,6 +14,7 @@ class Lessons extends Component {
         brush11: Brush,
         brush12: Brush2,
         wash: Wash,
+        currentLesson: [],
         lessonArray: [Brush, Brush2],
 
         properties: {
@@ -28,11 +30,7 @@ class Lessons extends Component {
         }
     };
 
-
-    componentDidMount() {
-        console.log(this.props.array);
-
-    }
+  
 
 
 
@@ -53,13 +51,15 @@ class Lessons extends Component {
 
 
         return (
+            
             <div className="slide-container">
+              
                 <Slide {...this.state.properties}>
 
-                   
+                    
 
                     {this.state.lessonArray.map (image =>
-                    <div className="each-slide">
+                    <div key="" className="each-slide">
                         <div style={{ 'backgroundImage': `url(${image})` }}>
                         <span>Lesson One</span>
                         </div>
