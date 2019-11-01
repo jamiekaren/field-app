@@ -1,34 +1,48 @@
 // import dependences and data
 import React, { Component } from "react";
-// import Media from "../media/media.json";
+import Media from "../media/media.json";
 import WashHands from "../media/wash-hands.jpg";
+import Lessons from "./Lessons/Lessons";
+
 // import API from "./src/utils/API.js";
+
+
 class Trainer extends Component {
   state = {
-    // Meda: [...Media],
-    currentLesson: false
+    Media: Media[0],
+    currentLesson: "",
+    Wash: WashHands,
+    lessonArray: ["../../media/brush11.jpg", "../../media/brush12.jpg"]
+
   };
   // componentDidMount() {
   //   // this.loadCurrentLesson();
   // }
+
+//  componentDidMount(){
+//    console.log("Our json", Media);
+//  };
+
   handleHardClick = image => {
-    console.log(image)
+    console.log(image);
   };
+
+
   render() {
+    
     return (
       <React.Fragment>
-        <nav className="navbar navbar-dark bg-success class d-flex justify-space-between">
-          <span className="navbar-brand mb-0">Field App PRO</span>
-        </nav>
-        <div className="jumbotron jumbotron-fluid bg-primary text-white text-center">
-          <h1>Welcome Trainer!</h1>
-        </div>
-        <div className="container-fluid">
+
+    
+
+          <div className="container-fluid">
           <element className="groupLesson post">
+
             <card>
               <img
-                onClick={(image) => this.handleHardClick(this.className) }
+                onClick={(image) => this.handleHardClick(image)}
                 className="imageHand"
+                
                 src={WashHands}
                 alt="WashingHands"
                 style={{
@@ -39,6 +53,7 @@ class Trainer extends Component {
                 }}
               />
             </card>
+
             <card>
               <img
                 onClick=""
@@ -53,6 +68,7 @@ class Trainer extends Component {
                 }}
               />
             </card>
+
             <card>
               <img
                 onClick=""
@@ -67,12 +83,19 @@ class Trainer extends Component {
                 }}
               />
             </card>
+            
           </element>
           <div className="container home row align-items-center justify-content-between"></div>
+
+
+          <Lessons />
+
         </div>
+
       </React.Fragment>
     );
   }
 }
+
 // export Clicky component
 export default Trainer;

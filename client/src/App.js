@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/" component={Login} />
         <Route path="/login" component={Home} />
         <Route path="/trainer" component={Trainer} />
-        <Route path="/" component={Slideshow} />
+        <Route path="/slideshow" component={Slideshow} />
         <Route component={NotFound} />
       </Switch>
       <Footer />
