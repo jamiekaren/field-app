@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import { Slide } from "react-slideshow-image";
-import Wash from "../../media/wash-hands.jpg";
-import Brush from "../../media/brush11.jpg";
-import Brush2 from "../../media/brush12.jpg";
+import Wash from "../../media/lesson2/wash-hands.jpg";
+import Brush from "../../media/lesson1/brush11.jpg";
+import Brush2 from "../../media/lesson1/brush12.jpg";
+import Brush3 from "../../media/lesson1/brush13.jpg";
+
 import("./style.css");
+
 class Slideshow extends Component {
   state = {
     brush11: Brush,
     brush12: Brush2,
     wash: Wash,
     currentLesson: [],
-    lessonArray: [Brush, Brush2],
+    lessonArray: [Brush, Brush2, Brush3],
+
     properties: {
       duration: 5000,
       transitionDuration: 500,
@@ -23,6 +27,7 @@ class Slideshow extends Component {
       }
     }
   };
+
   render() {
     // const properties = {
     //     duration: 5000,
@@ -35,6 +40,7 @@ class Slideshow extends Component {
     //         console.log(`slide transition from ${oldIndex} to ${newIndex}`);
     //     }
     // }
+
     return (
       <div className="slide-container">
         <Slide {...this.state.properties}>
@@ -50,5 +56,5 @@ class Slideshow extends Component {
     );
   }
 }
+
 export default Slideshow;
-Collapse;

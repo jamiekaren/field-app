@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const routes = require("./routes");
 
 const app = express();
-
 
 const PORT = process.env.PORT || 3001;
 
@@ -22,8 +22,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trainer_db")
-.then(() => console.log("MongoDB is connected..."))
-.catch((err) => console.log(err));
+.then(() => console.log("MongoDB is connected..."));
 
 
 // Start the API server

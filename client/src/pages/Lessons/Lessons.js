@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { Slide } from 'react-slideshow-image';
-import Wash from '../../media/wash-hands.jpg';
-import Brush from '../../media/brush11.jpg';
-import Brush2 from '../../media/brush12.jpg';
-
-
+import Wash from '../../media/lesson2/wash-hands.jpg';
+import Brush from '../../media/lesson1/brush11.jpg';
+import Brush2 from '../../media/lesson1/brush12.jpg';
+import Brush3 from '../../media/lesson1/brush13.jpg';
 import('./style.css');
-
-
 
 class Lessons extends Component {
     state = {
@@ -15,7 +12,7 @@ class Lessons extends Component {
         brush12: Brush2,
         wash: Wash,
         currentLesson: [],
-        lessonArray: [Brush, Brush2],
+        lessonArray: [Brush, Brush2, Brush3],
 
         properties: {
             duration: 5000,
@@ -29,9 +26,6 @@ class Lessons extends Component {
             }
         }
     };
-
-  
-
 
 
     render() {

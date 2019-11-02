@@ -20,7 +20,7 @@ function App() {
         <Route path="/slideshow" component={Slideshow} />
         <Route component={NotFound} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   )
 }
