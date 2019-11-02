@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
+import Trainer from '../../pages/Trainer';
+// import handleLogout from './Home'
 
 import {
   getFromStorage,
@@ -19,6 +21,7 @@ class Home extends Component {
       signInPassword: '',
       signUpEmail: '',
       signUpPassword: '',
+      // loggingOut: false,
     };
 
     this.onTextboxChangeSignInEmail = this.onTextboxChangeSignInEmail.bind(this);
@@ -81,6 +84,9 @@ class Home extends Component {
     });
   }
 
+
+
+
   onSignUp() {
 
     // Grab state
@@ -123,6 +129,13 @@ class Home extends Component {
       });
   }
 
+  componentDidUpdate() {
+    if(this.props.loggedin === false && this.state.token.length > 0){
+      this.logout();
+    }
+  }
+
+
   onSignIn() {
     // Grab state
     const {
@@ -150,6 +163,7 @@ class Home extends Component {
         console.log('json', json);
         if (json.success) {
           setInStorage('the_main_app', { token: json.token });
+          this.props.storeToken(json.token);
           this.setState({
             signInError: json.message,
             isLoading: false,
@@ -157,6 +171,8 @@ class Home extends Component {
             signInEmail: '',
             token: json.token,
           });
+          // Call storeToken
+          // console.log(token)
         } else {
           this.setState({
             signInError: json.message,
@@ -166,10 +182,16 @@ class Home extends Component {
       });
   }
 
+  // handleLogoutForReal(){
+  //   this.setState({
+  //     loggingOut: true
+  //   })
+  // }
+
   logout() {
-    this.setState({
-      isLoading: true,
-    });
+    // this.setState({
+    //   isLoading: true,
+    // });
     const obj = getFromStorage('the_main_app');
     if (obj && obj.token) {
       const { token } = obj;
@@ -205,6 +227,7 @@ class Home extends Component {
       signUpEmail,
       signUpPassword,
       signUpError,
+      // loggingOut
     } = this.state;
 
     if (isLoading) {
@@ -268,14 +291,28 @@ class Home extends Component {
         </div>
       );
     }
-
+    // if (loggingOut) {
+      // return (
+      //   <div className="text-center">
+      //     <p>Account</p>
+      //     <button className="btn btn-primary" onClick={this.logout}>Logout</button>
+      //   </div>
+      // )
+    // }
     return (
-      <div className="text-center">
-        <p>Account</p>
-        <button className="btn btn-primary" onClick={this.logout}>Logout</button>
-      </div>
+      <>
+        <Trainer />
+      </>
     );
+    
+    
   }
 }
+
+// export const handleLogout = () => {
+  
+//  this.handleLogoutForReal();
+
+// }
 
 export default Home;
