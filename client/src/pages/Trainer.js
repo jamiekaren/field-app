@@ -1,7 +1,7 @@
 // import dependences and data
 import React, { Component } from "react";
 import Media from "../media/media.json";
-import WashHands from "../media/wash-hands.jpg";
+import WashHands from "../media/lesson2/wash-hands.jpg";
 // import Lessons from "./Lessons/Lessons";
 import Slideshow from "../components/Slideshow/index.js";
 
@@ -17,7 +17,7 @@ class Trainer extends Component {
       Wash: WashHands,
       showComponent: false,
       showing: true,
-      lessonArray: ["../../media/brush11.jpg", "../../media/brush12.jpg"]
+      lessonArray: ["../../media/lesson1/brush11.jpg", "../../media/lesson1/brush12.jpg"]
     };
     this._onButtonClick = this._onButtonClick.bind(this);
   }
