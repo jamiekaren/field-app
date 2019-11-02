@@ -43,11 +43,6 @@ class Trainer extends Component {
     const { showing } = this.state;
     return (
       <React.Fragment>
-        <button id="button" onClick={() => this.setState({ showing: !showing })}>toggle</button>
-        {showing
-       ?   <div> hi </div>
-          : null
-        }
 
         <div className="container-fluid">
           <element className="groupLesson post">
