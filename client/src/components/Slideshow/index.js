@@ -6,7 +6,7 @@ import Brush2 from '../../media/brush12.jpg';
 
 import('./style.css');
 
-class Lessons extends Component {
+class Slideshow extends Component {
     state = {
         brush11: Brush,
         brush12: Brush2,
@@ -50,8 +50,7 @@ class Lessons extends Component {
               
                 <Slide {...this.state.properties}>
 
-                    
-
+                
                     {this.state.lessonArray.map (image =>
                     <div key="" className="each-slide">
                         <div style={{ 'backgroundImage': `url(${image})` }}>
@@ -69,4 +68,4 @@ class Lessons extends Component {
 
 }
 
-export default Lessons;
+export default Slideshow;

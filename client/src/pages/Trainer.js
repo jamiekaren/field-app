@@ -2,56 +2,75 @@
 import React, { Component } from "react";
 import Media from "../media/media.json";
 import WashHands from "../media/wash-hands.jpg";
-import Lessons from "./Lessons/Lessons";
+// import Lessons from "./Lessons/Lessons";
+import Slideshow from "../components/Slideshow/index.js";
 
 // import API from "./src/utils/API.js";
 
 
 class Trainer extends Component {
-  state = {
-    Media: Media[0],
-    currentLesson: "",
-    Wash: WashHands,
-    lessonArray: ["../../media/brush11.jpg", "../../media/brush12.jpg"]
+  constructor(props) {
+    super(props);
+    this.state = {
+      Media: Media[0],
+      currentLesson: "",
+      Wash: WashHands,
+      showComponent: false,
+      showing: true,
+      lessonArray: ["../../media/brush11.jpg", "../../media/brush12.jpg"]
+    };
+    this._onButtonClick = this._onButtonClick.bind(this);
+  }
 
-  };
   // componentDidMount() {
   //   // this.loadCurrentLesson();
   // }
 
-//  componentDidMount(){
-//    console.log("Our json", Media);
-//  };
+  //  componentDidMount(){
+  //    console.log("Our json", Media);
+  //  };
+  renderSlideshow() {
+    
+  }
 
-  handleHardClick = image => {
-    console.log(image);
-  };
-
+  _onButtonClick() {
+    this.setState({
+      showComponent: true,
+    });
+  }
 
   render() {
-    
+    const { showing } = this.state;
     return (
       <React.Fragment>
+        <button id="button" onClick={() => this.setState({ showing: !showing })}>toggle</button>
+        {showing
+       ?   <div> hi </div>
+          : null
+        }
 
-    
-
-          <div className="container-fluid">
+        <div className="container-fluid">
           <element className="groupLesson post">
+          {this.state.showComponent  ?
+          
+         this.renderSlideshow()
+               :
+               <div>
+                <card>
+               <img
+               onClick={this._onButtonClick}
+               className="imageHand"
 
-            <card>
-              <img
-                onClick={(image) => this.handleHardClick(image)}
-                className="imageHand"
-                
-                src={WashHands}
-                alt="WashingHands"
-                style={{
-                  width: 200,
-                  height: 200,
-                  position: "right",
-                  bottom: this.props.bottom
-                }}
-              />
+               src={WashHands}
+               alt="WashingHands"
+               style={{
+                 width: 200,
+                 height: 200,
+                 position: "right",
+                 bottom: this.props.bottom
+               }}
+             />
+            
             </card>
 
             <card>
@@ -83,12 +102,11 @@ class Trainer extends Component {
                 }}
               />
             </card>
-            
+            </div>
+              }
+
           </element>
           <div className="container home row align-items-center justify-content-between"></div>
-
-
-          <Lessons />
 
         </div>
 
@@ -97,5 +115,4 @@ class Trainer extends Component {
   }
 }
 
-// export Clicky component
 export default Trainer;
