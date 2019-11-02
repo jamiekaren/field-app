@@ -6,43 +6,34 @@ import Lessons from "./Lessons/Lessons";
 
 // import API from "./src/utils/API.js";
 
-
 class Trainer extends Component {
   state = {
     Media: Media[0],
     currentLesson: "",
     Wash: WashHands,
     lessonArray: ["../../media/brush11.jpg", "../../media/brush12.jpg"]
-
   };
   // componentDidMount() {
   //   // this.loadCurrentLesson();
   // }
 
-//  componentDidMount(){
-//    console.log("Our json", Media);
-//  };
+  //  componentDidMount(){
+  //    console.log("Our json", Media);
+  //  };
 
   handleHardClick = image => {
     console.log(image);
   };
 
-
   render() {
-    
     return (
       <React.Fragment>
-
-    
-
-          <div className="container-fluid">
+        <div className="container-fluid">
           <element className="groupLesson post">
-
             <card>
               <img
-                onClick={(image) => this.handleHardClick(image)}
+                onClick={image => this.handleHardClick(image)}
                 className="imageHand"
-                
                 src={WashHands}
                 alt="WashingHands"
                 style={{
@@ -83,15 +74,11 @@ class Trainer extends Component {
                 }}
               />
             </card>
-            
           </element>
           <div className="container home row align-items-center justify-content-between"></div>
 
-
           <Lessons />
-
         </div>
-
       </React.Fragment>
     );
   }
