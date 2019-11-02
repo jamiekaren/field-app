@@ -1,6 +1,6 @@
 // import dependences and data
 import React, { Component } from "react";
-import Media from "../media/media.json";
+// import Media from "../media/media.json";
 import WashHands from "../media/wash-hands.jpg";
 import Lessons from "./Lessons/Lessons";
 
@@ -9,7 +9,7 @@ import Lessons from "./Lessons/Lessons";
 
 class Trainer extends Component {
   state = {
-    Media: Media[0],
+    // Media: Media[0],
     currentLesson: "",
     Wash: WashHands,
     lessonArray: ["../../media/brush11.jpg", "../../media/brush12.jpg"]
