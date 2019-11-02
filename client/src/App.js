@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import Trainer from './pages/Trainer';
 import Login from './components/Login/Login';
 import './components/style/style.css'
+import Slideshow from './pages/Lessons/Lessons';
 
 class App extends Component { // Write as class
   // State goes here = {token: ''}
