@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import { Slide } from 'react-slideshow-image';
-import Wash from '../../media/wash-hands.jpg';
+// import Wash from '../../media/wash-hands.jpg';
 import Brush from '../../media/brush11.jpg';
 import Brush2 from '../../media/brush12.jpg';
-import Data from "./media.json";
+// import Data from "./media.json";
 
 
 import('./style.css');
 
 
-
-
 class Lessons extends Component {
+
+
     state = {
-        data: Data[0].image,
-        brush11: Brush,
-        brush12: Brush2,
-        wash: Wash,
+        // data: Data[0].image,
         currentLesson: [],
         lessonArray: [Brush, Brush2],
 
@@ -32,9 +29,6 @@ class Lessons extends Component {
             }
         }
     };
-
-  
-
 
 
     render() {
@@ -59,14 +53,13 @@ class Lessons extends Component {
               
                 <Slide {...this.state.properties}>
 
-                    
-
-                    {this.state.data.map (image =>
+\
+                    {this.state.lessonArray.map (image =>
                     <div key="" className="each-slide">
-                        {/* <div style={{ 'backgroundImage': `url(${image})` }}> */}
+                        <div style={{ 'backgroundImage': `url(${image})` }}>
                         <img src={image} alt=""/>
                         <span>Lesson One</span>
-                        {/* </div> */}
+                        </div>
                     </div>
                    
                     
