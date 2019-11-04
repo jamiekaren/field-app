@@ -59,7 +59,7 @@ class Trainer extends Component {
   }
 
   render = () => {
-    const { showing } = this.state;
+    const { showing } = this.state; 
     return (
       <React.Fragment>
 
