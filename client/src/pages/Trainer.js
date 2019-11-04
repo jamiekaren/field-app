@@ -1,16 +1,13 @@
-// import dependences and data
+// import dependences and dat
 import React, { Component } from "react";
 import { Slide } from 'react-slideshow-image';
-import WashHands1 from '../media/lesson2/hand-washing1.jpeg';
+import WashHands1 from '../media/lesson2/hand-washing01.jpeg';
 import WashHands2 from '../media/lesson2/hand-washing02.jpeg';
 import WashHands3 from '../media/lesson2/hand-washing03.jpeg';
-
-
 
 // const lessonOne = [Brush, Brush2];
 const lessonTwo = [WashHands1, WashHands2, WashHands3];
 // const lessonThree = [Brush, Brush2];
-
 
 class Trainer extends Component {
   constructor(props) {
