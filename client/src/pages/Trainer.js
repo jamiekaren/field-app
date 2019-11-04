@@ -2,11 +2,11 @@
 import React, { Component } from "react";
 import { Slide } from 'react-slideshow-image';
 import WashHands1 from '../media/lesson2/hand-washing01.jpeg';
-import WashHands2 from '../media/lesson2/hand-washing02.jpeg';
-import WashHands3 from '../media/lesson2/hand-washing03.jpeg';
+// import WashHands2 from '../media/lesson2/hand-washing02.jpeg';
+// import WashHands3 from '../media/lesson2/hand-washing03.jpeg';
 
 // const lessonOne = [Brush, Brush2];
-const lessonTwo = [WashHands1, WashHands2, WashHands3];
+const lessonTwo = [WashHands1, WashHands1, WashHands1];
 // const lessonThree = [Brush, Brush2];
 
 class Trainer extends Component {
@@ -100,7 +100,7 @@ class Trainer extends Component {
                   <img
                     onClick=""
                     className="imageHand"
-                    src={WashHands2}
+                    src={WashHands1}
                     alt="WashingHands"
                     style={{
                       width: 200,
@@ -115,7 +115,7 @@ class Trainer extends Component {
                   <img
                     onClick=""
                     className="imageHand"
-                    src={WashHands3}
+                    src={WashHands1}
                     alt="WashingHands"
                     style={{
                       width: 200,
