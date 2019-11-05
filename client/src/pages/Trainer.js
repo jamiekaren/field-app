@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { Slide } from 'react-slideshow-image';
 import WashHands1 from '../media/wash-hands.jpg';
-import WashHands2 from '../media/wash-hands.jpg';
+import WashHands2 from '../media/brush11.jpg';
 import WashHands3 from '../media/wash-hands.jpg';
 
 
