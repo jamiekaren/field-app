@@ -1,23 +1,40 @@
 // import dependences and data
 import React, { Component } from "react";
 import { Slide } from 'react-slideshow-image';
-import WashHands1 from '../media/lesson1/brush11.jpg';
-import WashHands2 from '../media/lesson1/brush12.jpg';
-import WashHands3 from '../media/lesson1/brush13.jpg';
+import Brush11 from '../media/lesson1/brush11.jpg';
+import Brush1 from '../media/lesson1/brush5.jpg';
+import Brush2 from '../media/lesson1/brush7.jpg';
+import Brush3 from '../media/lesson1/brush6.jpg';
+import Brush4 from '../media/lesson1/brush12.jpg';
 
 
+import Wash1 from '../media/lesson2/hand-washing02.jpeg';
+import Wash2 from '../media/lesson2/MOZ12_118_0.jpg';
+import Wash3 from '../media/lesson2/wash-hands.jpg';
 
-// const lessonOne = [Brush, Brush2];
-const lessonTwo = [WashHands1, WashHands2, WashHands3];
-// const lessonThree = [Brush, Brush2];
+import Bugs1 from '../media/lesson3/Mosquito-net.jpg';
+import Bugs2 from '../media/lesson3/mosquito.png';
 
+
+const allLessons = [{
+  name: "lessonOne",
+  lessons: [Brush1, Brush2, Brush3, Brush4]
+},
+{
+  name: "lessonTwo",
+  lessons: [Wash1, Wash2, Wash3]
+},
+{
+  name: "lessonThree",
+  lessons: [Bugs1, Bugs2]
+},
+];
 
 class Trainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentLesson: [...lessonTwo],
-      allLessons: [lessonTwo],
+      currentLesson: [],
       showComponent: false,
       properties: {
         duration: 5000,
@@ -32,36 +49,48 @@ class Trainer extends Component {
       }
     };
     this._onButtonClick = this._onButtonClick.bind(this);
+
   }
 
-  // renderSlideshow() {
-  //   <div className="slide-container">
-  //     <Slide {...this.state.properties}>
-  //       {this.state.currentLesson.map(image =>
-  //         <div key="" className="each-slide">
-  //           <div style={{ 'backgroundImage': `url(${image})` }}>
-  //           </div>
-  //         </div>
-  //       )}
 
-  //     </Slide>
-  //   </div>
-  // }
+  _onButtonClick = (image) => {
+    console.log(image.target);
 
-  _onButtonClick() {
+    let imageId = image.target.id;
 
+    allLessons.forEach(entry => {
+      // console.log(entry);
 
+      if (imageId === entry.name) {
+        console.log("This is our entry", entry);
 
-    this.setState({
-      showComponent: true,
-    });
+<<<<<<< HEAD
+
+=======
+        let lesson = entry.lessons;
+        console.log("This is our new lesson array", lesson);
+>>>>>>> origin
+
+        this.setState({currentLesson:lesson});
+       
+        this.setState({
+          showComponent: true,
+        });
+
+      }
+
+    })
+
+   
   }
 
   render = () => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin
     return (
       <React.Fragment>
-
         <div className="container-fluid">
           <element className="groupLesson post">
             {this.state.showComponent ?
@@ -74,19 +103,18 @@ class Trainer extends Component {
                       </div>
                     </div>
                   )}
-
                 </Slide>
               </div>
 
-              // this.renderSlideshow()
+
               :
               <div className="text-center mt-5">
                 <card className="mr-5">
                   <img
-                    onClick={this._onButtonClick}
-                    className="imageHand"
+                    onClick={(image) => this._onButtonClick(image)}
+                    id="lessonOne"
 
-                    src={WashHands1}
+                    src={Brush11}
                     alt="WashingHands"
                     style={{
                       width: 200,
@@ -100,9 +128,9 @@ class Trainer extends Component {
 
                 <card className="mr-5">
                   <img
-                    onClick=""
-                    className="imageHand"
-                    src={WashHands2}
+                    onClick={(image) => this._onButtonClick(image)}
+                    id="lessonTwo"
+                    src={Wash2}
                     alt="WashingHands"
                     style={{
                       width: 200,
@@ -115,9 +143,9 @@ class Trainer extends Component {
 
                 <card>
                   <img
-                    onClick=""
-                    className="imageHand"
-                    src={WashHands3}
+                    onClick={(image) => this._onButtonClick(image)}
+                    id="lessonThree"
+                    src={Wash3}
                     alt="WashingHands"
                     style={{
                       width: 200,
