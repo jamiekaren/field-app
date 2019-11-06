@@ -1,23 +1,41 @@
 // import dependences and data
 import React, { Component } from "react";
 import { Slide } from 'react-slideshow-image';
-import WashHands1 from '../media/lesson1/brush11.jpg';
-import WashHands2 from '../media/lesson1/brush12.jpg';
-import WashHands3 from '../media/lesson1/brush13.jpg';
+import Brush1 from '../media/lesson1/brush11.jpg';
+import Brush2 from '../media/lesson1/brush12.jpg';
+import Brush3 from '../media/lesson1/brush13.jpg';
 import Wash1 from '../media/lesson2/hand-washing02.jpeg';
 import Wash2 from '../media/lesson2/MOZ12_118_0.jpg';
 import Wash3 from '../media/lesson2/wash-hands.jpg';
 
-const lessonOne = [Wash1, Wash2, Wash3];
-const lessonTwo = [WashHands1, WashHands2, WashHands3];
+// const lessonOne = [Wash1, Wash2, Wash3];
+const lessonTwo = [Brush1, Brush2, Brush3];
 // const lessonThree = [Brush, Brush2];
+
+const allLessons = [{
+  name: "lessonOne",
+  lessons: [Brush1, Brush2, Brush3]
+},
+{
+  name: "lessonTwo",
+  lessons: [Wash1, Wash2, Wash3]
+},
+];
 
 class Trainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentLesson: [...lessonTwo],
-      allLessons: [lessonTwo, lessonOne],
+      // allLessons: [{
+      //   name: "lessonOne",
+      //   lessons: [Brush1, Brush2, Brush3]
+      // },
+      // {
+      //   name: "lessonTwo",
+      //   lessons: [Wash1, Wash2, Wash3]
+      // },
+      // ],
       showComponent: false,
       properties: {
         duration: 5000,
@@ -32,27 +50,37 @@ class Trainer extends Component {
       }
     };
     this._onButtonClick = this._onButtonClick.bind(this);
-    this.renderSlideshow = this.renderSlideshow.bind(this);
+
   }
 
-  // renderSlideshow() {
-  //   <div className="slide-container">
-  //     <Slide {...this.state.properties}>
-  //       {this.state.currentLesson.map(image =>
-  //         <div key="" className="each-slide">
-  //           <div style={{ 'backgroundImage': `url(${image})` }}>
-  //           </div>
-  //         </div>
-  //       )}
 
-  //     </Slide>
-  //   </div>
-  // }
+  _onButtonClick = (image) => {
+    console.log(image.target);
 
-  _onButtonClick() {
-    this.setState({
-      showComponent: true,
-    });
+    let imageId = image.target.id;
+
+    allLessons.forEach(entry => {
+      console.log(entry);
+
+      if (imageId === entry.name) {
+        console.log("This is our entry", entry);
+
+        let lesson = entry.lessons;
+        console.log("This is our new lesson array", lesson);
+
+        this.setState({currentLesson:lesson});
+       
+        this.setState({
+          showComponent: true,
+        });
+
+      }
+
+    })
+
+    // this.setState({
+    //   showComponent: true,
+    // });
   }
 
   render = () => {
@@ -72,16 +100,16 @@ class Trainer extends Component {
                   )}
                 </Slide>
               </div>
-              
-              // this.renderSlideshow()
+
+
               :
               <div>
                 <card>
                   <img
-                    onClick={this._onButtonClick}
-                    className="imageHand"
+                    onClick={(image) => this._onButtonClick(image)}
+                    id="lessonOne"
 
-                    src={WashHands1}
+                    src={Wash1}
                     alt="WashingHands"
                     style={{
                       width: 200,
@@ -95,9 +123,9 @@ class Trainer extends Component {
 
                 <card>
                   <img
-                    onClick=""
-                    className="imageHand"
-                    src={WashHands2}
+                    onClick={(image) => this._onButtonClick(image)}
+                    id="lessonTwo"
+                    src={Wash2}
                     alt="WashingHands"
                     style={{
                       width: 200,
@@ -112,7 +140,7 @@ class Trainer extends Component {
                   <img
                     onClick=""
                     className="imageHand"
-                    src={WashHands3}
+                    src={Wash3}
                     alt="WashingHands"
                     style={{
                       width: 200,
