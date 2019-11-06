@@ -10,65 +10,52 @@ import Login from './components/Login/Login';
 import './components/style/style.css'
 import Slideshow from './pages/Lessons/Lessons';
 
-function App() {
-  return (
-    <Router>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route path="/login" component={Home} />
-        <Route path="/trainer" component={Trainer} />
-        <Route component={NotFound} />
-      </Switch>
-      {/* <Footer /> */}
-    </Router>
-  )
-// class App extends Component { // Write as class
-//   // State goes here = {token: ''}
-//   state = {
-//     token: '',
-//     loggedin: false
-//   };
+class App extends Component { // Write as class
+  // State goes here = {token: ''}
+  state = {
+    token: '',
+    loggedin: false
+  };
 
-//   storeToken = (token) => {
-//     // setState with token
-//     // console.log(token)
-//     this.setState({
-//       token: token,
-//       loggedin:true
-//     })
-//   }
+  storeToken = (token) => {
+    // setState with token
+    // console.log(token)
+    this.setState({
+      token: token,
+      loggedin:true
+    })
+  }
 
-//   // clearToken = (token) => {
-//   //   this.setState({
-//   //     token: ''
-//   //   })
-//   // }
+  // clearToken = (token) => {
+  //   this.setState({
+  //     token: ''
+  //   })
+  // }
 
-//   logOut = () => {
-//     this.setState({
-//       loggedin: false,
-//       token: ''
-//     })
-//   }
+  logOut = () => {
+    this.setState({
+      loggedin: false,
+      token: ''
+    })
+  }
 
-//   render() {
-//     return (
-//       <Router>
-//         {/* Pass token from state */}
-//         < Nav token={this.state.token} logOut={this.logOut} />
-//         <Switch>
-//           <Route exact path="/" component={Login} />
-//           <Route path="/login" render={() => <Home loggedin={this.state.loggedin}  storeToken={this.storeToken} />} />
-//           <Route path="/logout" render={() => <Home loggedin={this.state.loggedin}  storeToken={this.storeToken} />} />
-//           <Route path="/trainer" component={Trainer} />
-//           <Route component={NotFound} />
-//         </Switch>
-//         <Footer />
-//       </Router >
-//     )
-//   }
+  render() {
+    return (
+      <Router>
+        {/* Pass token from state */}
+        < Nav token={this.state.token} logOut={this.logOut} />
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route path="/login" render={() => <Home loggedin={this.state.loggedin}  storeToken={this.storeToken} />} />
+          <Route path="/logout" render={() => <Home loggedin={this.state.loggedin}  storeToken={this.storeToken} />} />
+          <Route path="/trainer" component={Trainer} />
+          <Route component={NotFound} />
+        </Switch>
+        <Footer />
+      </Router >
+    )
+  }
 
-// }
+}
 
-//   export default App;
+  export default App;

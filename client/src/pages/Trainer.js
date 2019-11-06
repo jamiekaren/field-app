@@ -7,7 +7,6 @@ import Slideshow from "../components/Slideshow/index.js";
 
 // import API from "./src/utils/API.js";
 
-
 class Trainer extends Component {
   constructor(props) {
     super(props);
