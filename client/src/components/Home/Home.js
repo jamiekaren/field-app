@@ -243,7 +243,7 @@ class Home extends Component {
                 <p>{signInError}</p>
               ) : (null)
             }
-            <p>Sign In</p>
+            <p className="mt-5">Sign In</p>
             <input
               className="text-center"
               type="email"
