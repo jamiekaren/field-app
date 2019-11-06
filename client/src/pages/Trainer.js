@@ -4,20 +4,20 @@ import { Slide } from 'react-slideshow-image';
 import WashHands1 from '../media/lesson1/brush11.jpg';
 import WashHands2 from '../media/lesson1/brush12.jpg';
 import WashHands3 from '../media/lesson1/brush13.jpg';
+import Wash1 from '../media/lesson2/hand-washing02.jpeg';
+import Wash2 from '../media/lesson2/MOZ12_118_0.jpg';
+import Wash3 from '../media/lesson2/wash-hands.jpg';
 
-
-
-// const lessonOne = [Brush, Brush2];
+const lessonOne = [Wash1, Wash2, Wash3];
 const lessonTwo = [WashHands1, WashHands2, WashHands3];
 // const lessonThree = [Brush, Brush2];
-
 
 class Trainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentLesson: [...lessonTwo],
-      allLessons: [lessonTwo],
+      allLessons: [lessonTwo, lessonOne],
       showComponent: false,
       properties: {
         duration: 5000,
@@ -32,6 +32,7 @@ class Trainer extends Component {
       }
     };
     this._onButtonClick = this._onButtonClick.bind(this);
+    this.renderSlideshow = this.renderSlideshow.bind(this);
   }
 
   // renderSlideshow() {
@@ -49,9 +50,6 @@ class Trainer extends Component {
   // }
 
   _onButtonClick() {
-
-
-
     this.setState({
       showComponent: true,
     });
@@ -61,7 +59,6 @@ class Trainer extends Component {
 
     return (
       <React.Fragment>
-
         <div className="container-fluid">
           <element className="groupLesson post">
             {this.state.showComponent ?
@@ -74,10 +71,9 @@ class Trainer extends Component {
                       </div>
                     </div>
                   )}
-
                 </Slide>
               </div>
-
+              
               // this.renderSlideshow()
               :
               <div className="text-center mt-5">
