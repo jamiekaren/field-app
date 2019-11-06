@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Media from "../media/media.json";
 import WashHands from "../media/lesson2/wash-hands.jpg";
 // import Lessons from "./Lessons/Lessons";
-import Slideshow from "../components/Slideshow/index.js";
+// import Slideshow from "../components/Slideshow/index.js";
 
 // import API from "./src/utils/API.js";
 
