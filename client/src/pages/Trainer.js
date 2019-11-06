@@ -87,7 +87,7 @@ class Trainer extends Component {
           <element className="groupLesson post">
             {this.state.showComponent ?
 
-              <div className="slide-container">
+              <div className="slide-container mt-5 ">
                 <Slide {...this.state.properties}>
                   {this.state.currentLesson.map(image =>
                     <div key="" className="each-slide">
@@ -100,8 +100,8 @@ class Trainer extends Component {
 
 
               :
-              <div>
-                <card>
+              <div className="text-center mt-5">
+                <card className="mr-5">
                   <img
                     onClick={(image) => this._onButtonClick(image)}
                     id="lessonOne"
@@ -118,7 +118,7 @@ class Trainer extends Component {
 
                 </card>
 
-                <card>
+                <card className="mr-5">
                   <img
                     onClick={(image) => this._onButtonClick(image)}
                     id="lessonTwo"

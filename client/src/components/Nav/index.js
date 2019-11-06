@@ -16,7 +16,7 @@ function Nav(props) {
         Logout
       </Link>)}
     </nav>
-    <header className="nav2 mb-5 py-5 sticky-top mw-100%">
+    <header className="nav2 py-5 sticky-top mw-100%">
      <a href="/"><img alt="logo" src={logo} className="ml-4" ></img> </a> 
     </header>
     </>
