@@ -64,12 +64,8 @@ class Trainer extends Component {
       if (imageId === entry.name) {
         console.log("This is our entry", entry);
 
-<<<<<<< HEAD
-
-=======
         let lesson = entry.lessons;
         console.log("This is our new lesson array", lesson);
->>>>>>> origin
 
         this.setState({currentLesson:lesson});
        
@@ -85,10 +81,6 @@ class Trainer extends Component {
   }
 
   render = () => {
-<<<<<<< HEAD
-
-=======
->>>>>>> origin
     return (
       <React.Fragment>
         <div className="container-fluid">
