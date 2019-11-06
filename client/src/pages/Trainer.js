@@ -1,24 +1,32 @@
 // import dependences and data
 import React, { Component } from "react";
 import { Slide } from 'react-slideshow-image';
-import Brush1 from '../media/lesson1/brush11.jpg';
-import Brush2 from '../media/lesson1/brush12.jpg';
-import Brush3 from '../media/lesson1/brush13.jpg';
+import Brush11 from '../media/lesson1/brush11.jpg';
+import Brush1 from '../media/lesson1/brush5.jpg';
+import Brush2 from '../media/lesson1/brush7.jpg';
+import Brush3 from '../media/lesson1/brush6.jpg';
+import Brush4 from '../media/lesson1/brush12.jpg';
+
+
 import Wash1 from '../media/lesson2/hand-washing02.jpeg';
 import Wash2 from '../media/lesson2/MOZ12_118_0.jpg';
 import Wash3 from '../media/lesson2/wash-hands.jpg';
 
-// const lessonOne = [Wash1, Wash2, Wash3];
-const lessonTwo = [Brush1, Brush2, Brush3];
-// const lessonThree = [Brush, Brush2];
+import Bugs1 from '../media/lesson3/Mosquito-net.jpg';
+import Bugs2 from '../media/lesson3/mosquito.png';
+
 
 const allLessons = [{
   name: "lessonOne",
-  lessons: [Brush1, Brush2, Brush3]
+  lessons: [Brush1, Brush2, Brush3, Brush4]
 },
 {
   name: "lessonTwo",
   lessons: [Wash1, Wash2, Wash3]
+},
+{
+  name: "lessonThree",
+  lessons: [Bugs1, Bugs2]
 },
 ];
 
@@ -26,16 +34,7 @@ class Trainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentLesson: [...lessonTwo],
-      // allLessons: [{
-      //   name: "lessonOne",
-      //   lessons: [Brush1, Brush2, Brush3]
-      // },
-      // {
-      //   name: "lessonTwo",
-      //   lessons: [Wash1, Wash2, Wash3]
-      // },
-      // ],
+      currentLesson: [],
       showComponent: false,
       properties: {
         duration: 5000,
@@ -60,7 +59,7 @@ class Trainer extends Component {
     let imageId = image.target.id;
 
     allLessons.forEach(entry => {
-      console.log(entry);
+      // console.log(entry);
 
       if (imageId === entry.name) {
         console.log("This is our entry", entry);
@@ -78,9 +77,7 @@ class Trainer extends Component {
 
     })
 
-    // this.setState({
-    //   showComponent: true,
-    // });
+   
   }
 
   render = () => {
@@ -109,7 +106,7 @@ class Trainer extends Component {
                     onClick={(image) => this._onButtonClick(image)}
                     id="lessonOne"
 
-                    src={Wash1}
+                    src={Brush11}
                     alt="WashingHands"
                     style={{
                       width: 200,
@@ -138,8 +135,8 @@ class Trainer extends Component {
 
                 <card>
                   <img
-                    onClick=""
-                    className="imageHand"
+                    onClick={(image) => this._onButtonClick(image)}
+                    id="lessonThree"
                     src={Wash3}
                     alt="WashingHands"
                     style={{
