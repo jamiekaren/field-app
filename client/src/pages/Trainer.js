@@ -1,32 +1,39 @@
 // import dependences and data
 import React, { Component } from "react";
 import { Slide } from 'react-slideshow-image';
-import Brush11 from '../media/lesson1/brush11.jpg';
-import Brush1 from '../media/lesson1/brush5.jpg';
-import Brush2 from '../media/lesson1/brush7.jpg';
-import Brush3 from '../media/lesson1/brush6.jpg';
-import Brush4 from '../media/lesson1/brush12.jpg';
+import BrushThumb from '../media/lesson1/lesson1-thumbnail.png';
+import Brush from '../media/lesson1/brush.png';
+import Brush1 from '../media/lesson1/brush1.png';
+import Brush2 from '../media/lesson1/brush2.png';
+import Brush3 from '../media/lesson1/brush3.png';
+import Brush4 from '../media/lesson1/brush4.png';
 
+import WashThumb from '../media/lesson2/lesson2-thumbnail.png';
+import Wash1 from '../media/lesson2/wash1.png';
+import Wash2 from '../media/lesson2/wash2.png';
+import Wash3 from '../media/lesson2/wash3.png';
+import Wash4 from '../media/lesson2/wash4.png';
+// import Wash3 from '../media/lesson2/wash-hands.jpg';
 
-import Wash1 from '../media/lesson2/hand-washing02.jpeg';
-import Wash2 from '../media/lesson2/MOZ12_118_0.jpg';
-import Wash3 from '../media/lesson2/wash-hands.jpg';
-
-import Bugs1 from '../media/lesson3/Mosquito-net.jpg';
-import Bugs2 from '../media/lesson3/mosquito.png';
+import BugsThumb from '../media/lesson3/lesson3-thumbnail.png';
+import Bugs1 from '../media/lesson3/bug1.png';
+import Bugs2 from '../media/lesson3/bug2.png';
+import Bugs3 from '../media/lesson3/bug3.png';
+import Bugs4 from '../media/lesson3/bug4.png';
+import Bugs5 from '../media/lesson3/bug5.png';
 
 
 const allLessons = [{
   name: "lessonOne",
-  lessons: [Brush1, Brush2, Brush3, Brush4]
+  lessons: [Brush, Brush1, Brush2, Brush3, Brush4]
 },
 {
   name: "lessonTwo",
-  lessons: [Wash1, Wash2, Wash3]
+  lessons: [Wash1, Wash2, Wash3, Wash4]
 },
 {
   name: "lessonThree",
-  lessons: [Bugs1, Bugs2]
+  lessons: [Bugs1, Bugs2, Bugs3, Bugs4, Bugs5]
 },
 ];
 
@@ -48,10 +55,15 @@ class Trainer extends Component {
         }
       }
     };
-    this._onButtonClick = this._onButtonClick.bind(this);
-
+    // this._onButtonClick = this._onButtonClick.bind(this);
+  
   }
 
+
+  buttonBackLessons = () => {
+    console.log("Button working!");
+    this.setState({showComponent: false});
+  }
 
   _onButtonClick = (image) => {
     console.log(image.target);
@@ -96,6 +108,8 @@ class Trainer extends Component {
                     </div>
                   )}
                 </Slide>
+                <br></br>
+               <center><button type="button" onClick={(event) =>this.buttonBackLessons(event)}>Back to lessons</button></center>
               </div>
 
 
@@ -106,11 +120,11 @@ class Trainer extends Component {
                     onClick={(image) => this._onButtonClick(image)}
                     id="lessonOne"
 
-                    src={Brush11}
+                    src={BrushThumb}
                     alt="WashingHands"
                     style={{
-                      width: 200,
-                      height: 200,
+                      width: 400,
+                      height: 250,
                       position: "right",
                       bottom: this.props.bottom
                     }}
@@ -122,11 +136,11 @@ class Trainer extends Component {
                   <img
                     onClick={(image) => this._onButtonClick(image)}
                     id="lessonTwo"
-                    src={Wash2}
+                    src={WashThumb}
                     alt="WashingHands"
                     style={{
-                      width: 200,
-                      height: 200,
+                      width: 400,
+                      height: 250,
                       position: "left",
                       bottom: this.props.bottom
                     }}
@@ -137,11 +151,11 @@ class Trainer extends Component {
                   <img
                     onClick={(image) => this._onButtonClick(image)}
                     id="lessonThree"
-                    src={Wash3}
+                    src={BugsThumb}
                     alt="WashingHands"
                     style={{
-                      width: 200,
-                      height: 200,
+                      width: 400,
+                      height: 250,
                       position: "relative",
                       bottom: this.props.bottom
                     }}
