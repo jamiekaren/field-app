@@ -48,10 +48,15 @@ class Trainer extends Component {
         }
       }
     };
-    this._onButtonClick = this._onButtonClick.bind(this);
-
+    // this._onButtonClick = this._onButtonClick.bind(this);
+  
   }
 
+
+  buttonBackLessons = () => {
+    console.log("Button working!");
+    this.setState({showComponent: false});
+  }
 
   _onButtonClick = (image) => {
     console.log(image.target);
@@ -96,6 +101,7 @@ class Trainer extends Component {
                     </div>
                   )}
                 </Slide>
+               <center><button type="button" onClick={(event) =>this.buttonBackLessons(event)}>Back to lessons</button></center>
               </div>
 
 
